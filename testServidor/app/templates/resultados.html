@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../static/css/style2.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="../static/css/style3.css"> <!-- Resource style -->
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day']
+      {% for i in range(0, l_des)  %} ,['{{ nombres_des[i] }} ({{ creds[i] }} ECTS)', {{ horas[i] }}]{% endfor %}
+      ]);
+
+      var options = {
+      is3D: true,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+      chart.draw(data, options);
+      }
+    </script>
+
+    <title>Proyecto I - Horario</title>
+  </head>
+
+
+  <body>
+    <br>
+    <p class="title2">Horario de estudio</p>
+    
+    <div class="cd-schedule loading">
+      <div class="timeline">
+	<ul>
+	  {% for i in range(ini, ini + l_horario + 1) %}
+	  <li><span>{{ i }}:00</span></li>
+	  <li><span>{{ i }}:30</span></li>
+	  {% endfor %}
+	  {% for i in range(ini + l_horario + 1, ini + 10) %}
+	  <li><span>{{ i }}:00</span></li>
+	  <li><span>{{ i }}:30</span></li>
+	  {% endfor %}
+	</ul>
+      </div> <!-- .timeline -->
+
+      <!-- TIENES QUE ASIGNAR COLOR A CADA ASIGNATURA, HAY 6 COLORES, CADA UNO LLEVA EL NOMBRE DE event-x (1 <= x <= 8) -->
+      <!-- Tecnología del Medio Ambiente y Sostenibilidad: data-event="event-1" -->
+      <!-- Mecánica: data-event="event-2" -->
+      <!-- Electromagnetismo: data-event="event-3" -->
+      <!-- Dinámica de Sistemas: data-event="event-4" -->
+      <!-- Economía y Empresa: data-event="event-5" -->
+      <!-- ... data-event="event-6" -->
+
+      <div class="events">
+	<ul>
+	  <!-- Cada día de la semana -->
+	  {% for j in range(0, 5) %}
+	  <li class="events-group">
+	    <div class="top-info"><span>{{ dias[j] }}</span></div>
+	    <ul>
+	      {% for i in range(0, l_horario) %}
+	      {% if horario[i][j] != -1 and horario[i][j] != -2 %}
+	      <li class="single-event" data-start="{{ ini + i }}:00" data-end="{{ ini + i + 1}}:00" data-event="event-{{ horario[i][j] + 1}}">
+		<a href="#0">
+		  <em class="event-name">{{ nombres[horario[i][j]] }}</em>
+		</a>
+	      </li>
+	      {% endif %}
+	      {% endfor %}
+	    </ul>
+	  </li>
+	  {% endfor %}
+	</ul>
+      </div>
+
+      <div class="event-modal">
+      	<header class="header">
+      	  <div class="content">
+      	    <span class="event-date"></span>
+      	    <h3 class="event-name"></h3>
+      	  </div>
+
+      	  <div class="header-bg"></div>
+      	</header>
+
+      	<div class="body">
+      	  <div class="event-info"></div>
+      	  <div class="body-bg"></div>
+      	</div>
+
+      	<a href="#0" class="close">Close</a>
+      </div>
+
+      <div class="cover-layer"></div>
+    </div> <!-- .cd-schedule -->
+
+
+    {% if large_horario == True %}
+    {% for i in range(0, 2*l_horario) %}
+    <br>
+    {% endfor %}
+    {% endif %}
+    
+
+    <br><br><br><br>
+    <p class="title2">Fin de semana</p>
+    <table>
+      {% for i in range(0, l_finde) %}
+      <tr>
+	{% for j in range(0, 2) %}
+	<td><center>{{ finde[i][j] }}</center></td>
+	{% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+
+    
+    <br><br><br><br><br><br>
+    <p class="title2">Notas</p>
+    <table>
+      <tr>
+	<td><center></center></td>	
+	{% for i in range(0, l_des) %}
+	<td><center>{{ nombres_des[i] }}</center></td>
+	{% endfor %}
+      </tr>
+      <tr>
+	<td><center>Predicción</center></td>
+	{% for i in range(0, l_des) %}
+	<td><center>{{ notas_esp[i] }}</center></td>
+	{% endfor %}
+      </tr>
+      <tr>
+	<td><center>Deseadas</center></td>
+	{% for i in range(0, l_des) %}
+	<td><center>{{ -notas_des[i] }}</center></td>
+	{% endfor %}
+      </tr>
+      <tr>
+	<td><center>Medias</center></td>
+	{% for i in range(0, l_des) %}
+	<td><center>{{ notas_med[i] }}</center></td>
+	{% endfor %}
+      </tr>
+    </table>
+
+    
+    <br><br><br><br><br><br><br>
+    <p class="title2">Distribución de horas</p>
+    <div align="center">  
+      <div id="piechart_3d" style="width: 1200px; height: 500px;"></div>
+    </div>
+
+
+    <br><br><br><br>
+    <p class="title2">Estudiantes con notas más cercanas a las tuyas</p>
+    <table>
+      {% for i in range(0, l_vecinos_curs_i)  %}
+      <tr>
+	{% for j in range(0, l_vecinos_curs_j) %}
+	<td><center>{{ vecinos_curs[i][j] }}</center></td>
+	{% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+
+    <br><br><br><br><br><br><br><br>
+    <p class="title2">Notas de las asignaturas matriculadas de los estudiantes más cercanos</p>
+    <table>
+      {% for i in range(0, l_vecinos_des_i)  %}
+      <tr>
+	{% for j in range(0, l_vecinos_des_j) %}
+	<td><center>{{ vecinos_des[i][j] }}</center></td>
+	{% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+
+    
+    <br><br><br><br><br><br><br><br>
+
+    <script src="../static/javascript/modernizr.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+      if( !window.jQuery ) document.write('<script src="../static/javascript/jquery-3.0.0.min.js"><\/script>');
+      </script>
+      <script src="../static/javascript/main.js"></script> <!-- Resource jQuery -->
+  </body>
+</html>

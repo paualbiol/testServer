@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proyecto I - Horario</title>
+    <p class="title1">Smart_hours.</p>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+  </head>
+
+
+  <!-- HEADER OK-->
+  <body bgcolor="#F3CA24">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../static/DPS.css"> -->
+    <p class="observations2"> Por favor, introduce las asignaturas que estés matriculado.</p>
+<style>
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+    <form action="/cursadas" method="post">
+      <p class="observations">Escoge el rendimiento que desees.*</p>
+      <div class="wrapper">
+	<select name="rend">
+	  <option value="min">Mínimo </option>
+	  <option value="med">Medio</option>
+	  <option value="max">Alto</option>
+	  <option value="man">Manual</option>
+	</select>
+      </div>
+
+      <br>
+      <div class="row">
+      	<div class="column_short" align="center">
+          <p class="observations2">Q1</p>
+
+	  <label class="switch">
+  <input type="checkbox" name="check_list[]" value="Álgebra Lineal">Álgebra Lineal
+  <span class="slider round"></span> 
+</label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Cálculo I">Cálculo I
+  <span class="slider round"></span> </label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Mecánica Fundamental">Mecánica Fundamental
+  <span class="slider round"></span> </label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Química I">Química I
+  <span class="slider round"></span></label> 
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Fundamentos de Informática">Fundamentos de Informática
+  <span class="slider round"></span></label>
+	</div>
+	
+	<div class="column_short" align="center">
+          <p class="observations2">Q2</p>
+          <label class="switch">
+  <input type="checkbox" name="check_list[]" value="Geometría">Geometría
+  <span class="slider round"></span></label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Cálculo II">Cálculo II
+  <span class="slider round"></span></label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Termodinámica Fundamental">Termodinámica Fundamental
+  <span class="slider round"></span></label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Química II">Química II
+  <span class="slider round"></span></label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Expresión Gráfica">Expresión Gráfica
+  <span class="slider round"></span></label>
+        </div>
+      </div>
+      
+      
+      <div class="row">
+      	<div class="column_short" align="center">
+          <p class="observations2">Q3</p>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Ecuaciones Diferenciales">Ecuaciones Diferenciales
+  <span class="slider round"></span></label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Electromagnetismo">Electromagnetismo
+  <span class="slider round"></span></label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Métodos Numéricos">Métodos Numéricos
+  <span class="slider round"></span></label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Informática">Informática
+  <span class="slider round"></span></label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Materiales">Materiales
+  <span class="slider round"></span></label>
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Mecánica">Mecánica
+  <span class="slider round"></span></label>
+	</div>
+	
+	<div class="column" align="center">
+          <p class="observations2">Q4</p>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Ampliación de Mecánica">Ampliación de Mecánica
+  <span class="slider round"></span></label>
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Ampliación de Química">Ampliación de Química
+  <span class="slider round"></span></label>
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Comunicación de Información Técnica">Comunicación de Información Técnica
+  <span class="slider round"></span></label>
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Debates Sobre Tecnología y Sociedad">Debates Sobre Tecnología y Sociedad
+  <span class="slider round"></span></label>
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Desarrollo Tecnológico y Científico en la Antigüedad. Egipto y Oriente Próximo">Desarrollo Tecnológico y Científico en la Antigüedad. Egipto y Oriente Próximo
+  <span class="slider round"></span></label>
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Dinámica de Sistemas">Dinámica de Sistemas
+  <span class="slider round"></span></label>
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Economía y Empresa">Economía y Empresa
+  <span class="slider round"></span></label>
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Estadística">Estadística
+  <span class="slider round"></span></label>
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Juegos para Computadores. Estructura y Desarrollo">Juegos para Computadores. Estructura y Desarrollo
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Los Orígenes de la Ingeniería Moderna">Los Orígenes de la Ingeniería Moderna
+  <span class="slider round"></span></label>
+      	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Proyecto I">Proyecto I
+  <span class="slider round"></span></label>
+      	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Taller Eléctrico">Taller Eléctrico
+  <span class="slider round"></span></label>
+      	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Tecnología de la Luz">Tecnología de la Luz
+  <span class="slider round"></span></label>
+      	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Teoría de Máquinas y Mecanismos">Teoría de Máquinas y Mecanismos
+  <span class="slider round"></span></label>
+      	  
+	  
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      
+      <div class="row">
+      	<div class="column_short" align="center">
+          <p class="observations2">Q5</p>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Tecnología del Medio Ambiente y Sostenibilidad">Tecnología del Medio Ambiente y Sostenibilidad
+  <span class="slider round"></span></label>
+         
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Termodinámica">Termodinámica
+  <span class="slider round"></span></label>
+	 
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Electrotecnia">Electrotecnia
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Mecánica de los Medios Continuos">Mecánica de los Medios Continuos
+  <span class="slider round"></span></label>
+	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Técnicas Estadísticas para la Calidad">Técnicas Estadísticas para la Calidad
+  <span class="slider round"></span></label>
+      	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Tecnología y Selección de Materiales">Tecnología y Selección de Materiales
+  <span class="slider round"></span></label>
+      	  
+        </div> 
+      	
+      	<div class="column_short" align="center">
+      	  <p class="observations2">Q6</p>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Mecánica de Fluidos">Mecánica de Fluidos
+  <span class="slider round"></span></label>
+      	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Proyecto II">Proyecto II
+  <span class="slider round"></span></label>
+	  
+	  <br>
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Organización y Gestión">Organización y Gestión
+  <span class="slider round"></span></label>
+      	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Resistencia de Materiales">Resistencia de Materiales
+  <span class="slider round"></span></label>
+      	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Optimización y Simulación">Optimización y Simulación
+  <span class="slider round"></span></label>
+          
+          <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Máquinas Eléctricas">Máquinas Eléctricas
+  <span class="slider round"></span></label>
+          
+      	</div>
+      </div>
+      
+      <div class="row">
+      	<div class="column" align="center">
+          <p class="observations2">Q7</p>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Gestión de Proyectos">Gestión de Proyectos
+  <span class="slider round"></span></label>
+	  
+      	  <br>
+      	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Electrónica">Electrónica
+  <span class="slider round"></span></label>
+      	  
+          <br>
+          <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Sistemas de Fabricación">Sistemas de Fabricación
+  <span class="slider round"></span></label>
+          
+      	  <br><br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Termotecnia">Termotecnia
+  <span class="slider round"></span></label>
+      	  
+      	  <br>
+          <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Control Automático">Control Automático
+  <span class="slider round"></span></label>
+          
+        </div> 
+      	
+      	<div class="column_long" align="center">
+      	  <p class="observations2">Q8</p>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Tecnologías Digitales para la Comunicación de los Proyectos">Tecnologías Digitales para la Comunicación de los Proyectos
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Historia de la Ingeniería Industrial. La Escuela de Barcelona">Historia de la Ingeniería Industrial. La Escuela de Barcelona
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Rehabilitación y Eficiencia Energética en la Edificación">Rehabilitación y Eficiencia Energética en la Edificación
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Movilidad Eléctrica">Movilidad Eléctrica
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Desarrollo de Aplicaciones Basadas en Microcontroladores">Desarrollo de Aplicaciones Basadas en Microcontroladores
+  <span class="slider round"></span></label>
+	 
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Taller Electrónico">Taller Electrónico
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Sistemas Mecánicos">Sistemas Mecánicos
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Vehículos">Vehículos
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Análisis de Datos para la Industria y los Servicios">Análisis de Datos para la Industria y los Servicios
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Fusión Nuclear. Iter">Fusión Nuclear. Iter
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Logística Control de Flotas y Sig">Logística Control de Flotas y Sig
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="La Historia de la Matemática Aplicada en la Ingeniería">La Historia de la Matemática Aplicada en la Ingeniería
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Albert Einstein y la Ciencia y la Técnica del Siglo XX">Albert Einstein y la Ciencia y la Técnica del Siglo XX
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Cultura Tecnología e Historia en China y Japón">Cultura Tecnología e Historia en China y Japón
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Ingeniería Industria y Sociedad">Ingeniería Industria y Sociedad
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Dinámica Computacional de Fluidos">Dinámica Computacional de Fluidos
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Sistemas de Distribución de Tuberías">Sistemas de Distribución de Tuberías
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Sistemas de Gestión">Sistemas de Gestión
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Ampliación de Resistencia de Materiales">Ampliación de Resistencia de Materiales
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Análisis de Componentes Estructurales y Mecánicos para el MEF">Análisis de Componentes Estructurales y Mecánicos para el MEF
+  <span class="slider round"></span></label>
+	 
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="La Robótica en la Ingeniería">La Robótica en la Ingeniería
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Tecnología Ferroviaria">Tecnología Ferroviaria
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Polímeros en la Industria">Polímeros en la Industria
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Técnicas de Ensayos No Destructivos Industriales">Técnicas de Ensayos No Destructivos Industriales
+  <span class="slider round"></span></label>
+	  
+	  <br>
+	  <br>
+<label class="switch">
+  <input type="checkbox" name="check_list[]" value="Comunicación Oral en Inglés Académico y Profesional">Comunicación Oral en Inglés Académico y Profesional
+  <span class="slider round"></span></label>
+	  
+      	</div>
+      </div>
+
+      
+      <br><br><br>
+      <p class="observations2">*Rendimiento</p>
+      <p class="observations">Mínimo: si deseas aprobar con 5 las asignaturas.</p>
+      <p class="observations">Medio: si quieres mantener tu nota media o aprobar con 5 en caso de que tu media sea de suspenso.</p>
+      <p class="observations">Alto: para aumentar tu nota media en un 10% o aprobar con 5.5 en caso de que tu media sea de suspenso.</p>
+      <p class="observations">Manual: introduce tú mismo las notas que deseas obtener.</p>
+      
+
+      <br><br>
+      <div class="wrapper">
+      	<button type="submit"> SIGUIENTE PÁGINA </button>
+      </div>
+      <br>
+
+      <?php
+	if(!empty($_POST['check_list'])) {
+	foreach($_POST['check_list'] as $check) {
+	echo $check; //echoes the value set in the HTML form for each checked checkbox.
+	//so, if I were to check 1, 3, and 5 it would echo value 1, value 3, value 5.
+	//in your case, it would echo whatever $row['Report ID'] is equivalent to.
+	}
+	}
+	>
+    </form>
+
+    <button onclick="javascript:history.go(-1)";>Go Back</button>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../static/javascript/jquery.min.js"></script>
+  </body>
+</html>

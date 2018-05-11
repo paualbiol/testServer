@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proyecto I - Horario</title>
+    <p class = title1>Smart_hours.</p>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+  </head>
+
+
+</head>
+<!-- HEADER OK-->
+<body bgcolor = #F3CA24>
+  <p class = observations2> Porfavor, introduce las asignaturas que estés matriculado.</p>
+
+  <div id="myDIV" class="header">
+    <p class="title2" style="margin:5px">Asignaturas matriculadas</p>
+    <form action="/action_page.php" method="get">
+      <input list="abc" type="text" id="myInput" placeholder="Añade asignaturas...">
+      <datalist id="abc">
+    	<option value="Mecànica">
+	<option value="Estadística">
+	<option value="Economia i Empresa">
+	<option value="Dinàmica de Sistemes">
+	<option value="Teoria de Màquines i Mecanismes">
+	<option value="Electromagnetisme">
+	<option value="Equacions Diferencials">
+	<option value="Informàtica">
+	<option value="Mètodes Numèrics">
+	<option value="Materials">
+	<option value="Tecnologia del Medi Ambient i Sostenibilitat">
+	<option value="Termodinàmica">
+	<option value="Electrotècnia">
+	<option value="Mecànica dels Medis Continus">
+	<option value="Tecnologia i Selecció de Materials">
+	<option value="Tècniques Estadístiques per la Qualitat">
+	<option value="Mecànica de Fluids">
+	<option value="Organització i Gestió">
+	<option value="Resistència de Materials">
+	<option value="Màquines Elèctriques">
+	<option value="Simulació i Optimització">
+	<option value="Gestió de Projectes">
+	<option value="Electrònica">
+	<option value="Sistemes de Fabricació">
+	<option value="Termotècnia">
+	<option value="Control Automàtic">
+	<option value="Projecte de Grau">
+      </datalist>
+    </form>
+    <!-- <span onclick="newElement()" class="addBtn">Añadir</span> -->
+    <span onclick="prueba_guardar()" class="addBtn">Añadir</span>    
+  </div>
+  <ul id="myUL"></ul>
+	</br>  
+	<div class="wrapper"> <button type=button>SIGUIENTE PÁGINA</button> </div>
+
+	<script src="../static/javascript/lista_asig.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="../static/javscript/jquery.min.js"></script>
+</body>
+</html>

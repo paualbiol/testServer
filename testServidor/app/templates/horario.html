@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proyecto I - Horario</title>
+    <p class="title1">Smart_hours.</p>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  </head>
+
+  <!-- HEADER OK -->
+  <body bgcolor="#F3CA24">
+
+    <!-- APARTADO HORARIO -->
+    <link rel="stylesheet" type="text/css" href="../static/css/DPS.css">
+    <p class = observations> Smart_hours es un servicio ofrecido por esudiantes de Ingniería Industrial (ETSEIB). Mediante el análisis y predicción <br> de tus notas, montaremos un horario a tu medida, respetando todas tus horas ocupadas.<br></p>
+    <br>
+    <p class="observations2">Por favor, marca las horas que no puedas estudiar para mejorar tu horario.</p>
+    <br>
+    <form action="/deseadas" method="post">
+      <table>
+<th class="titelCell" align="center"></th>
+        <th class="titelCell" align="center">09:00</th>
+	<th class="titelCell" align="center">10:00</th>
+	<th class="titelCell" align="center">11:00</th>
+	<th class="titelCell" align="center">12:00</th>
+	<th class="titelCell" align="center">13:00</th>
+	<th class="titelCell" align="center">14:00</th>
+	<th class="titelCell" align="center">15:00</th>
+	<th class="titelCell" align="center">16:00</th>
+	<th class="titelCell" align="center">17:00</th>
+	<th class="titelCell" align="center">18:00</th>
+	<th class="titelCell" align="center">19:00</th>
+	<th class="titelCell" align="center">20:00</th>
+	<th class="titelCell" align="center">21:00</th>
+	<th class="titelCell" align="center">22:00</th>
+        <th class="titelCell" align="center">23:00</th>
+
+
+  <tbody>
+    <tr>
+      <th class="dayCell">Lunes</th>
+      <td><input id=109 onmouseover='check(109)' type="checkbox" name="horario" value="109"></td>
+      <td ><input id=110 onmouseover='check(110)' type="checkbox" name="horario" value="110"></td>     
+      <td ><input id=111 onmouseover='check(111)' type="checkbox" name="horario" value="111"></td>
+      <td ><input id=112 onmouseover='check(112)' type="checkbox" name="horario" value="112"></td>
+      <td ><input id=113 onmouseover='check(113)' type="checkbox" name="horario" value="113"></td>
+      <td ><input id=114 onmouseover='check(114)' type="checkbox" name="horario" value="114"></td>
+      <td ><input id=115 onmouseover='check(115)' type="checkbox" name="horario" value="115"></td>
+      <td ><input id=116 onmouseover='check(116)' type="checkbox" name="horario" value="116"></td>
+      <td ><input id=117 onmouseover='check(117)' type="checkbox" name="horario" value="117"></td>
+      <td ><input id=118 onmouseover='check(118)' type="checkbox" name="horario" value="118"></td>
+      <td ><input id=119 onmouseover='check(119)' type="checkbox" name="horario" value="119"></td>     
+      <td ><input id=120 onmouseover='check(120)' type="checkbox" name="horario" value="120"></td>
+      <td ><input id=121 onmouseover='check(121)' type="checkbox" name="horario" value="121"></td>
+      <td ><input id=122 onmouseover='check(122)' type="checkbox" name="horario" value="122"></td>
+      <td ><input id=123 onmouseover='check(123)' type="checkbox" name="horario" value="123"></td>
+    </tr>
+    <tr>
+      <th class="dayCell">Martes</th>
+      <td ><input id=209 onmouseover='check(209)' type="checkbox" name="horario" value="209"></td>
+      <td ><input id=210 onmouseover='check(210)' type="checkbox" name="horario" value="210"></td>     
+      <td ><input id=211 onmouseover='check(211)' type="checkbox" name="horario" value="211"></td>
+      <td ><input id=212 onmouseover='check(212)' type="checkbox" name="horario" value="212"></td>
+      <td ><input id=213 onmouseover='check(213)' type="checkbox" name="horario" value="213"></td>
+      <td ><input id=214 onmouseover='check(214)' type="checkbox" name="horario" value="214"></td>
+      <td ><input id=215 onmouseover='check(215)' type="checkbox" name="horario" value="215"></td>
+      <td ><input id=216 onmouseover='check(216)' type="checkbox" name="horario" value="216"></td>
+      <td ><input id=217 onmouseover='check(217)' type="checkbox" name="horario" value="217"></td>
+      <td ><input id=218 onmouseover='check(218)' type="checkbox" name="horario" value="218"></td>
+      <td ><input id=219 onmouseover='check(219)' type="checkbox" name="horario" value="219"></td>     
+      <td ><input id=220 onmouseover='check(220)' type="checkbox" name="horario" value="220"></td>
+      <td ><input id=221 onmouseover='check(221)' type="checkbox" name="horario" value="221"></td>
+      <td ><input id=222 onmouseover='check(222)' type="checkbox" name="horario" value="222"></td>
+      <td ><input id=223 onmouseover='check(223)' type="checkbox" name="horario" value="223"></td>
+    </tr>
+    <tr>
+      <th class="dayCell">Miércoles</th>
+      <td ><input id=309 onmouseover='check(309)' type="checkbox" name="horario" value="309"></td>
+      <td ><input id=310 onmouseover='check(310)' type="checkbox" name="horario" value="310"></td>     
+      <td ><input id=311 onmouseover='check(311)' type="checkbox" name="horario" value="311"></td>
+      <td ><input id=312 onmouseover='check(312)' type="checkbox" name="horario" value="312"></td>
+      <td ><input id=313 onmouseover='check(313)' type="checkbox" name="horario" value="313"></td>
+      <td ><input id=314 onmouseover='check(314)' type="checkbox" name="horario" value="314"></td>
+      <td ><input id=315 onmouseover='check(315)' type="checkbox" name="horario" value="315"></td>
+      <td ><input id=316 onmouseover='check(316)' type="checkbox" name="horario" value="316"></td>
+      <td ><input id=317 onmouseover='check(317)' type="checkbox" name="horario" value="317"></td>
+      <td ><input id=318 onmouseover='check(318)' type="checkbox" name="horario" value="318"></td>
+      <td ><input id=319 onmouseover='check(319)' type="checkbox" name="horario" value="319"></td>     
+      <td ><input id=320 onmouseover='check(320)' type="checkbox" name="horario" value="320"></td>
+      <td ><input id=321 onmouseover='check(321)' type="checkbox" name="horario" value="321"></td>
+      <td ><input id=322 onmouseover='check(322)' type="checkbox" name="horario" value="322"></td>
+      <td ><input id=323 onmouseover='check(323)' type="checkbox" name="horario" value="323"></td>
+    </tr>
+    <tr>
+      <th class="dayCell">Jueves</th>
+      <td ><input id=409 onmouseover='check(409)' type="checkbox" name="horario" value="409"></td>
+      <td ><input id=410 onmouseover='check(410)' type="checkbox" name="horario" value="410"></td>     
+      <td ><input id=411 onmouseover='check(411)' type="checkbox" name="horario" value="411"></td>
+      <td ><input id=412 onmouseover='check(412)' type="checkbox" name="horario" value="412"></td>
+      <td ><input id=413 onmouseover='check(413)' type="checkbox" name="horario" value="413"></td>
+      <td ><input id=414 onmouseover='check(414)' type="checkbox" name="horario" value="414"></td>
+      <td ><input id=415 onmouseover='check(415)' type="checkbox" name="horario" value="415"></td>
+      <td ><input id=416 onmouseover='check(416)' type="checkbox" name="horario" value="416"></td>
+      <td ><input id=417 onmouseover='check(417)' type="checkbox" name="horario" value="417"></td>
+      <td ><input id=418 onmouseover='check(418)' type="checkbox" name="horario" value="418"></td>
+      <td ><input id=419 onmouseover='check(419)' type="checkbox" name="horario" value="419"></td>     
+      <td ><input id=420 onmouseover='check(420)' type="checkbox" name="horario" value="420"></td>
+      <td ><input id=421 onmouseover='check(421)' type="checkbox" name="horario" value="421"></td>
+      <td ><input id=422 onmouseover='check(422)'type="checkbox" name="horario" value="422"></td>
+      <td ><input id=423 onmouseover='check(423)' type="checkbox" name="horario" value="423"></td>
+    </tr>
+    <tr>
+      <th class="dayCell">Viérnes</th>
+      <td ><input id=509 onmouseover='check(509)' type="checkbox" name="horario" value="509"></td>
+      <td ><input id=510 onmouseover='check(510)' type="checkbox" name="horario" value="510"></td>     
+      <td ><input id=511 onmouseover='check(511)' type="checkbox" name="horario" value="511"></td>
+      <td ><input id=512 onmouseover='check(512)' type="checkbox" name="horario" value="512"></td>
+      <td ><input id=513 onmouseover='check(513)' type="checkbox" name="horario" value="513"></td>
+      <td ><input id=514 onmouseover='check(514)' type="checkbox" name="horario" value="514"></td>
+      <td ><input id=515 onmouseover='check(515)' type="checkbox" name="horario" value="515"></td>
+      <td ><input id=516 onmouseover='check(516)' type="checkbox" name="horario" value="516"></td>
+      <td ><input id=517 onmouseover='check(517)' type="checkbox" name="horario" value="517"></td>
+      <td ><input id=518 onmouseover='check(518)' type="checkbox" name="horario" value="518"></td>
+      <td ><input id=519 onmouseover='check(519)' type="checkbox" name="horario" value="519"></td>     
+      <td ><input id=520 onmouseover='check(520)' type="checkbox" name="horario" value="520"></td>
+      <td ><input id=521 onmouseover='check(521)' type="checkbox" name="horario" value="521"></td>
+      <td ><input id=522 onmouseover='check(522)' type="checkbox" name="horario" value="522"></td>
+      <td ><input id=523 onmouseover='check(523)' type="checkbox" name="horario" value="523"></td>
+    </tr>
+  </tbody>
+</table>
+     
+      <br><br>
+      <div class="wrapper">
+    <button type="submit"> SIGUIENTE PÁGINA </button>
+      </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../static/javascript/jquery.min.js"></script>
+    <script src="../static/javascript/horario.js"></script>
+  </body>
+</html>
+
