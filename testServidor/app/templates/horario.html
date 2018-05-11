@@ -3,6 +3,13 @@
   <head>
     <title>Proyecto I - Horario</title>
     <p class="title1">Smart_hours.</p>
+<br><br>
+
+<div id="myProgress">
+  <div id="myBar">0%</div>
+</div>
+<br><br>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -19,6 +26,42 @@
     <br>
     <p class="observations2">Por favor, marca las horas que no puedas estudiar para mejorar tu horario.</p>
     <br>
+  
+
+
+
+<script>
+window.onload = function(){
+  var elem = document.getElementById("myBar");   
+  var width = 0;
+  var id = setInterval(frame, 30);
+  function frame() {
+    if (width >= 10) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+};
+</script>
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+
     <form action="/deseadas" method="post">
       <table>
 <th class="titelCell" align="center"></th>

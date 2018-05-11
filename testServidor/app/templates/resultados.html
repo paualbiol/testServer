@@ -1,9 +1,47 @@
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
+<title>Proyecto I - Horario</title>
+    <p class="title1">Smart_hours.</p>
+<br><br>
+
+<div id="myProgress">
+  <div id="myBar">66%</div>
+</div>
+<br><br>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+window.onload = function(){
+  var elem = document.getElementById("myBar");   
+  var width = 66;
+  var id = setInterval(frame, 30);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+};
+</script>
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
 
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="../static/css/style2.css"> <!-- Resource style -->

@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Proyecto I - Horario</title>
     <p class="title1">Smart_hours.</p>
+<br><br>
+
+<div id="myProgress">
+  <div id="myBar">10%</div>
+</div>
+<br><br>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -13,12 +20,94 @@
 
   <!-- HEADER OK-->
   <body bgcolor="#F3CA24">
-
-    <!-- <link rel="stylesheet" type="text/css" href="../static/DPS.css"> -->
+ <!-- <link rel="stylesheet" type="text/css" href="../static/DPS.css"> -->
     <p class="observations2"> Por favor, introduce las asignaturas que estés matriculado.</p>
+
+
+  
+
+<script>
+window.onload = function(){
+  var elem = document.getElementById("myBar");   
+  var width = 10;
+  var id = setInterval(frame, 30);
+  function frame() {
+    if (width >= 33) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+};
+</script>
+
 <style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+
+<style>
+.sliderWrapper{display: inline-block;margin:24px 24px 24px 24px;postion:relative;}
+.sliderWrapper div{display: inline-block;line-height:60px;}
+ /* The switch - the box around the slider */
+.switch {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  padding:0px;
+  width: 54px;
+  height: 28px;
+}
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d7d7d7;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {background-color: #1fb5ad;}
+input:focus + .slider {box-shadow: 0 0 1px #1fb5ad;}
+input:checked + .slider:before {-webkit-transform: translateX(26px);-ms-transform: translateX(26px);transform: translateX(26px);}
+
+</style>
+
+<style>
+
+
 /* The switch - the box around the slider */
 .switch {
+  vertical-align: middle;
   position: relative;
   display: inline-block;
   width: 60px;
@@ -89,444 +178,570 @@ input:checked + .slider:before {
 
       <br>
       <div class="row">
-      	<div class="column_short" align="center">
+      	
           <p class="observations2">Q1</p>
 
-	  <label class="switch">
-  <input type="checkbox" name="check_list[]" value="Álgebra Lineal">Álgebra Lineal
-  <span class="slider round"></span> 
-</label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Cálculo I">Cálculo I
-  <span class="slider round"></span> </label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Mecánica Fundamental">Mecánica Fundamental
-  <span class="slider round"></span> </label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Química I">Química I
-  <span class="slider round"></span></label> 
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Fundamentos de Informática">Fundamentos de Informática
-  <span class="slider round"></span></label>
-	</div>
+<div class="sliderWrapper">
+          <div>Álgebra Lineal&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Álgebra Lineal">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+
+	  
+<div class="sliderWrapper">
+          <div>Cálculo I&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Cálculo I">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+
+	  
+<div class="sliderWrapper">
+          <div>Mecánica Fundamental&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Mecánica Fundamental">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+
+	  
+<div class="sliderWrapper">
+          <div>Química I&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Química I">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+	 
+	  
+<div class="sliderWrapper">
+          <div>Fundamentos de Informática&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Fundamentos de Informática">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+
 	
-	<div class="column_short" align="center">
+	<br><br>
           <p class="observations2">Q2</p>
-          <label class="switch">
-  <input type="checkbox" name="check_list[]" value="Geometría">Geometría
-  <span class="slider round"></span></label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Cálculo II">Cálculo II
-  <span class="slider round"></span></label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Termodinámica Fundamental">Termodinámica Fundamental
-  <span class="slider round"></span></label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Química II">Química II
-  <span class="slider round"></span></label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Expresión Gráfica">Expresión Gráfica
-  <span class="slider round"></span></label>
+<div class="sliderWrapper">
+          <div>Geometría&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Geometría">
+                <span class="slider round"></span>
+            </label>
         </div>
-      </div>
+
+<div class="sliderWrapper">
+          <div>Cálculo II&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Cálculo II">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+<div class="sliderWrapper">
+          <div>Termodinámica Fundamental&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Termodinámica Fundamental">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+
+<div class="sliderWrapper">
+          <div>Química II&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Química II">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+<div class="sliderWrapper">
+          <div>Expresión Gráfica&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Expresión Gráfica">
+                <span class="slider round"></span>
+            </label>
+        </div>
+     
       
       
-      <div class="row">
-      	<div class="column_short" align="center">
+      <br><br>
           <p class="observations2">Q3</p>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Ecuaciones Diferenciales">Ecuaciones Diferenciales
-  <span class="slider round"></span></label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Electromagnetismo">Electromagnetismo
-  <span class="slider round"></span></label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Métodos Numéricos">Métodos Numéricos
-  <span class="slider round"></span></label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Informática">Informática
-  <span class="slider round"></span></label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Materiales">Materiales
-  <span class="slider round"></span></label>
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Mecánica">Mecánica
-  <span class="slider round"></span></label>
-	</div>
-	
-	<div class="column" align="center">
-          <p class="observations2">Q4</p>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Ampliación de Mecánica">Ampliación de Mecánica
-  <span class="slider round"></span></label>
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Ampliación de Química">Ampliación de Química
-  <span class="slider round"></span></label>
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Comunicación de Información Técnica">Comunicación de Información Técnica
-  <span class="slider round"></span></label>
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Debates Sobre Tecnología y Sociedad">Debates Sobre Tecnología y Sociedad
-  <span class="slider round"></span></label>
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Desarrollo Tecnológico y Científico en la Antigüedad. Egipto y Oriente Próximo">Desarrollo Tecnológico y Científico en la Antigüedad. Egipto y Oriente Próximo
-  <span class="slider round"></span></label>
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Dinámica de Sistemas">Dinámica de Sistemas
-  <span class="slider round"></span></label>
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Economía y Empresa">Economía y Empresa
-  <span class="slider round"></span></label>
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Estadística">Estadística
-  <span class="slider round"></span></label>
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Juegos para Computadores. Estructura y Desarrollo">Juegos para Computadores. Estructura y Desarrollo
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Los Orígenes de la Ingeniería Moderna">Los Orígenes de la Ingeniería Moderna
-  <span class="slider round"></span></label>
-      	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Proyecto I">Proyecto I
-  <span class="slider round"></span></label>
-      	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Taller Eléctrico">Taller Eléctrico
-  <span class="slider round"></span></label>
-      	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Tecnología de la Luz">Tecnología de la Luz
-  <span class="slider round"></span></label>
-      	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Teoría de Máquinas y Mecanismos">Teoría de Máquinas y Mecanismos
-  <span class="slider round"></span></label>
-      	  
-	  
+<div class="sliderWrapper">
+          <div>Ecuaciones Diferenciales&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Ecuaciones Diferenciales">
+                <span class="slider round"></span>
+            </label>
         </div>
-      </div>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="sliderWrapper">
+          <div>Electromagnetismo&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Electromagnetismo">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Métodos Numéricos&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Métodos Numéricos">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Informática&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Informática">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Materiales&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Materiales">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Mecánica&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Mecánica">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<br><br>
+	
+	
+          <p class="observations2">Q4</p>
+<div class="sliderWrapper">
+          <div>Ampliación de Mecánica&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Ampliación de Mecánica">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Ampliación de Química&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Ampliación de Química">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Comunicación de Información Técnica&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Comunicación de Información Técnica">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Debates Sobre Tecnología y Sociedad&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Debates Sobre Tecnología y Sociedad">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Desarrollo Tecnológico y Científico en la Antigüedad. Egipto y Oriente Próximo&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Desarrollo Tecnológico y Científico en la Antigüedad. Egipto y Oriente Próximo">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Dinámica de Sistemas&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Dinámica de Sistemas">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Economía y Empresa&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Economía y Empresa">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Estadística&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Estadística">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Juegos para Computadores. Estructura y Desarrollo&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Juegos para Computadores. Estructura y Desarrollo">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Los Orígenes de la Ingeniería Moderna&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Los Orígenes de la Ingeniería Moderna">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+<div class="sliderWrapper">
+          <div>Proyecto I&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Proyecto I">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Taller Eléctrico&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Taller Eléctrico">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Tecnología de la Luz&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Tecnología de la Luz">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Teoría de Máquinas y Mecanismos&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Teoría de Máquinas y Mecanismos">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+      	  
+	
+      <br><br>
       
-      <div class="row">
-      	<div class="column_short" align="center">
+     
           <p class="observations2">Q5</p>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Tecnología del Medio Ambiente y Sostenibilidad">Tecnología del Medio Ambiente y Sostenibilidad
-  <span class="slider round"></span></label>
-         
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Termodinámica">Termodinámica
-  <span class="slider round"></span></label>
-	 
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Electrotecnia">Electrotecnia
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Mecánica de los Medios Continuos">Mecánica de los Medios Continuos
-  <span class="slider round"></span></label>
-	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Técnicas Estadísticas para la Calidad">Técnicas Estadísticas para la Calidad
-  <span class="slider round"></span></label>
-      	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Tecnología y Selección de Materiales">Tecnología y Selección de Materiales
-  <span class="slider round"></span></label>
-      	  
-        </div> 
+<div class="sliderWrapper">
+          <div>Tecnología del Medio Ambiente y Sostenibilidad&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Tecnología del Medio Ambiente y Sostenibilidad">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Termodinámica&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Termodinámica">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Electrotecnia&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Electrotecnia">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Mecánica de los Medios Continuos&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Mecánica de los Medios Continuos">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+<div class="sliderWrapper">
+          <div>Técnicas Estadísticas para la Calidad&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Técnicas Estadísticas para la Calidad">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Tecnología y Selección de Materiales&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Tecnología y Selección de Materiales">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
       	
-      	<div class="column_short" align="center">
+      	<br><br>
       	  <p class="observations2">Q6</p>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Mecánica de Fluidos">Mecánica de Fluidos
-  <span class="slider round"></span></label>
-      	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Proyecto II">Proyecto II
-  <span class="slider round"></span></label>
-	  
-	  <br>
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Organización y Gestión">Organización y Gestión
-  <span class="slider round"></span></label>
-      	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Resistencia de Materiales">Resistencia de Materiales
-  <span class="slider round"></span></label>
-      	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Optimización y Simulación">Optimización y Simulación
-  <span class="slider round"></span></label>
-          
-          <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Máquinas Eléctricas">Máquinas Eléctricas
-  <span class="slider round"></span></label>
-          
-      	</div>
-      </div>
-      
-      <div class="row">
-      	<div class="column" align="center">
-          <p class="observations2">Q7</p>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Gestión de Proyectos">Gestión de Proyectos
-  <span class="slider round"></span></label>
-	  
-      	  <br>
-      	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Electrónica">Electrónica
-  <span class="slider round"></span></label>
-      	  
-          <br>
-          <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Sistemas de Fabricación">Sistemas de Fabricación
-  <span class="slider round"></span></label>
-          
-      	  <br><br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Termotecnia">Termotecnia
-  <span class="slider round"></span></label>
-      	  
-      	  <br>
-          <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Control Automático">Control Automático
-  <span class="slider round"></span></label>
-          
-        </div> 
-      	
-      	<div class="column_long" align="center">
-      	  <p class="observations2">Q8</p>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Tecnologías Digitales para la Comunicación de los Proyectos">Tecnologías Digitales para la Comunicación de los Proyectos
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Historia de la Ingeniería Industrial. La Escuela de Barcelona">Historia de la Ingeniería Industrial. La Escuela de Barcelona
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Rehabilitación y Eficiencia Energética en la Edificación">Rehabilitación y Eficiencia Energética en la Edificación
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Movilidad Eléctrica">Movilidad Eléctrica
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Desarrollo de Aplicaciones Basadas en Microcontroladores">Desarrollo de Aplicaciones Basadas en Microcontroladores
-  <span class="slider round"></span></label>
-	 
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Taller Electrónico">Taller Electrónico
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Sistemas Mecánicos">Sistemas Mecánicos
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Vehículos">Vehículos
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Análisis de Datos para la Industria y los Servicios">Análisis de Datos para la Industria y los Servicios
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Fusión Nuclear. Iter">Fusión Nuclear. Iter
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Logística Control de Flotas y Sig">Logística Control de Flotas y Sig
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="La Historia de la Matemática Aplicada en la Ingeniería">La Historia de la Matemática Aplicada en la Ingeniería
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Albert Einstein y la Ciencia y la Técnica del Siglo XX">Albert Einstein y la Ciencia y la Técnica del Siglo XX
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Cultura Tecnología e Historia en China y Japón">Cultura Tecnología e Historia en China y Japón
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Ingeniería Industria y Sociedad">Ingeniería Industria y Sociedad
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Dinámica Computacional de Fluidos">Dinámica Computacional de Fluidos
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Sistemas de Distribución de Tuberías">Sistemas de Distribución de Tuberías
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Sistemas de Gestión">Sistemas de Gestión
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Ampliación de Resistencia de Materiales">Ampliación de Resistencia de Materiales
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Análisis de Componentes Estructurales y Mecánicos para el MEF">Análisis de Componentes Estructurales y Mecánicos para el MEF
-  <span class="slider round"></span></label>
-	 
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="La Robótica en la Ingeniería">La Robótica en la Ingeniería
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Tecnología Ferroviaria">Tecnología Ferroviaria
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Polímeros en la Industria">Polímeros en la Industria
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Técnicas de Ensayos No Destructivos Industriales">Técnicas de Ensayos No Destructivos Industriales
-  <span class="slider round"></span></label>
-	  
-	  <br>
-	  <br>
-<label class="switch">
-  <input type="checkbox" name="check_list[]" value="Comunicación Oral en Inglés Académico y Profesional">Comunicación Oral en Inglés Académico y Profesional
-  <span class="slider round"></span></label>
-	  
-      	</div>
-      </div>
+<div class="sliderWrapper">
+          <div>Mecánica de Fluidos&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Mecánica de Fluidos">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Proyecto II&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Proyecto II">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Organización y Gestión&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Organización y Gestión">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Resistencia de Materiales&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Resistencia de Materiales">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Optimización y Simulación&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Optimización y Simulación">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Máquinas Eléctricas&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Máquinas Eléctricas">
+                <span class="slider round"></span>
+            </label>
+        </div>
 
       
-      <br><br><br>
+      <br><br>
+          <p class="observations2">Q7</p>
+<div class="sliderWrapper">
+          <div>Gestión de Proyectos&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Gestión de Proyectos">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Electrónica&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Electrónica">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Sistemas de Fabricación&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Sistemas de Fabricación">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<div class="sliderWrapper">
+          <div>Termotecnia&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Termotecnia">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+<div class="sliderWrapper">
+          <div>Control Automático&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Control Automático">
+                <span class="slider round"></span>
+            </label>
+        </div>
+<br><br>
+      	  <p class="observations2">Q8</p>
+<div class="sliderWrapper">
+          <div>Tecnologías Digitales para la Comunicación de los Proyectos&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Tecnologías Digitales para la Comunicación de los Proyectos">
+                <span class="slider round"></span>
+            </label>
+	</div>
+<div class="sliderWrapper">
+          <div>Historia de la Ingeniería Industrial. La Escuela de Barcelona&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Historia de la Ingeniería Industrial. La Escuela de Barcelona">
+                <span class="slider round"></span>
+            </label>
+	</div>
+<div class="sliderWrapper">
+          <div>Rehabilitación y Eficiencia Energética en la Edificación&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Rehabilitación y Eficiencia Energética en la Edificación">
+                <span class="slider round"></span>
+            </label>
+	</div>
+<div class="sliderWrapper">
+          <div>Movilidad Eléctrica&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Movilidad Eléctrica">
+                <span class="slider round"></span>
+            </label>
+	</div>
+<div class="sliderWrapper">
+          <div>Desarrollo de Aplicaciones Basadas en Microcontroladores&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Desarrollo de Aplicaciones Basadas en Microcontroladores">
+                <span class="slider round"></span>
+            </label>
+	</div>
+<div class="sliderWrapper">
+          <div>Taller Electrónico&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Taller Electrónico">
+                <span class="slider round"></span>
+            </label>
+	</div>
+
+<div class="sliderWrapper">
+          <div>Sistemas Mecánicos&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Sistemas Mecánicos">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Vehículos&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Vehículos">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Análisis de Datos para la Industria y los Servicios&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Análisis de Datos para la Industria y los Servicios">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Fusión Nuclear. Iter&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Fusión Nuclear. Iter">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Logística Control de Flotas y Sig&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Logística Control de Flotas y Sig">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>La Historia de la Matemática Aplicada en la Ingeniería&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="La Historia de la Matemática Aplicada en la Ingeniería">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Albert Einstein y la Ciencia y la Técnica del Siglo XX&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Albert Einstein y la Ciencia y la Técnica del Siglo XX">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Albert Einstein y la Ciencia y la Técnica del Siglo XX&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Cultura Tecnología e Historia en China y Japón">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Ingeniería Industria y Sociedad&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Ingeniería Industria y Sociedad">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Dinámica Computacional de Fluidos&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Dinámica Computacional de Fluidos">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Sistemas de Distribución de Tuberías&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Sistemas de Distribución de Tuberías">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Sistemas de Gestión&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Sistemas de Gestión">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Ampliación de Resistencia de Materiales&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Ampliación de Resistencia de Materiales">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Análisis de Componentes Estructurales y Mecánicos para el MEF&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Análisis de Componentes Estructurales y Mecánicos para el MEF">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>La Robótica en la Ingeniería&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="La Robótica en la Ingeniería">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Tecnología Ferroviaria&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Tecnología Ferroviaria">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Polímeros en la Industria&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Polímeros en la Industria">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Técnicas de Ensayos No Destructivos Industriales&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Técnicas de Ensayos No Destructivos Industriales">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+<div class="sliderWrapper">
+          <div>Comunicación Oral en Inglés Académico y Profesional&nbsp;&nbsp;</div>
+            <label class="switch">
+                <input type="checkbox" name="check_list[]"value="Comunicación Oral en Inglés Académico y Profesional">
+                <span class="slider round"></span>
+            </label>
+	</div>	
+
+
+      
+      <br><br>
       <p class="observations2">*Rendimiento</p>
       <p class="observations">Mínimo: si deseas aprobar con 5 las asignaturas.</p>
       <p class="observations">Medio: si quieres mantener tu nota media o aprobar con 5 en caso de que tu media sea de suspenso.</p>
@@ -550,6 +765,8 @@ input:checked + .slider:before {
 	}
 	>
     </form>
+
+
 
     <button onclick="javascript:history.go(-1)";>Go Back</button>
 

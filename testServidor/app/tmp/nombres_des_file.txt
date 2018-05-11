@@ -1,5 +1,6 @@
-Álgebra Lineal
-Cálculo I
-Mecánica Fundamental
-Química I
-Fundamentos de Informática
+Ecuaciones Diferenciales
+Electromagnetismo
+Métodos Numéricos
+Informática
+Materiales
+Mecánica
